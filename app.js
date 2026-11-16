@@ -12,7 +12,7 @@
   };
   text('intro', data.intro); text('research-note', data.researchNote); text('skills', data.skills); text('hobbies', data.hobbies);
   html('areas', data.areas.map(a => `<span>${escape(a)}</span>`).join(''));
-  html('research-list', data.research.map((r, i) => `<article class="research-item"><div class="item-number">0${i+1}</div><div><h3>${escape(r.title)}</h3><span class="tag">${escape(r.status)}</span></div><div class="research-description"><p>${escape(r.description)}</p><p class="detail">${escape(r.detail)}</p>${r.mediaLabel ? media(r) : ''}</div></article>`).join(''));
+  html('research-list', data.research.filter((r, i) => !document.querySelector('.research-story') || i > 0).map((r, i) => `<article class="research-item"><div class="item-number">0${i+1}</div><div><h3>${escape(r.title)}</h3><span class="tag">${escape(r.status)}</span></div><div class="research-description"><p>${escape(r.description)}</p><p class="detail">${escape(r.detail)}</p>${r.mediaLabel ? media(r) : ''}</div></article>`).join(''));
   html('project-list', data.projects.map(p => `<article class="project">${p.mediaLabel ? media(p) : ''}<span class="tag">${escape(p.label)}</span><h3>${escape(p.title)}</h3><p>${escape(p.description)}</p>${p.detail ? `<details><summary>Context & contribution</summary><p>${escape(p.detail)}</p></details>` : ''}<p class="tech">${escape(p.tech)}</p></article>`).join(''));
   const experienceGroups = [
     { key: 'industry', title: 'Industry experience' },
