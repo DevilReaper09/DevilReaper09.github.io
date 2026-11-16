@@ -17,12 +17,12 @@ window.PORTFOLIO = {
     { title: "SoilMate", label: "HackMerced", description: "Contributed the core algorithm to a team project recognized with the Best AI in Education award.", tech: "Algorithm development / Collaborative prototyping" }
   ],
   experience: [
-    { date: "From 2024", role: "Design Engineer", org: "Privoro", description: "Developed production firmware and integrated embedded systems, working across C, Zephyr, embedded Linux, Python, and hardware-in-the-loop testing." },
-    { date: "May–December 2023", role: "GNSS Engineer Intern", org: "Hemisphere GNSS", description: "Worked on receiver firmware migration and multithreaded synchronization, including mutex-based coordination in embedded C/C++ systems." },
-    { date: "January–May 2023", role: "Full Stack Developer", org: "247ERICPOINTCOM", description: "Built features for a mathematics quiz platform using PHP, JavaScript, and MySQL as part of a collaborative development team." },
-    { date: "2022 & 2024", role: "Undergraduate Teaching Assistant", org: "Arizona State University", description: "Supported undergraduate learning through course assistance and technical guidance." },
-    { date: "2022–2023", role: "Lead Tutor", org: "Arizona State University", description: "Helped students work through technical material and develop independent problem-solving skills." },
-    { date: "2021–2022", role: "Instructional Aide", org: "Arizona State University", description: "Supported instruction and students alongside academic coursework." }
+    { date: "August 2024–Present", role: "Firmware Design Engineer", org: "Privoro LLC · Phoenix, AZ", description: "Develop embedded firmware in C and Zephyr, from implementation and hardware bring-up through automated verification and release. Build Python hardware-in-the-loop testing and GitHub Actions workflows; work on secure communications, firmware updates, and power and thermal controls." },
+    { date: "May–December 2023", role: "GNSS Engineer Intern", org: "Hemisphere GNSS · Scottsdale, AZ", description: "Migrated GNSS receiver firmware in C/C++ and ARM assembly to ARM Compiler 6 and GCC. Added mutex protection to shared data across six concurrent threads." },
+    { date: "January–April 2023", role: "Full Stack Developer", org: "247ERICPOINTCOM · Remote / Cape Town", description: "Collaborated on Mathema Contest, a mathematics quiz platform. Built PHP and JavaScript frontend functionality and MySQL data structures for quizzes, user management, and results." },
+    { date: "August 2021–May 2023; January–May 2024", role: "Undergraduate Teaching Assistant", org: "Ira A. Fulton Schools of Engineering · Arizona State University", description: "Supported courses in programming, computer organization and assembly, embedded microprocessor systems, circuits, and Grand Challenges for Engineering." },
+    { date: "October 2022–May 2023", role: "Lead Tutor", org: "University Academic Success Programs · Arizona State University", description: "Helped students work through technical material and supported collaborative review sessions." },
+    { date: "January 2022–May 2024", role: "Treasurer · Student leadership", org: "Bridges International · Tempe, AZ", description: "Managed event finances and funding requests, supporting club activities and supplies." }
   ],
   education: { institution: "Arizona State University", degree: "BSE, Computer Systems Engineering", date: "May 2024", distinction: "4.00 GPA · Summa cum laude", honors: "Barrett, The Honors College · Grand Challenges Scholar" },
   skills: "C/C++ · Python · Embedded Linux · Zephyr · Machine learning · Experimental evaluation · API integration · Full-stack development",

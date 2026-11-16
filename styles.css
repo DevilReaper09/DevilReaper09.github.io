@@ -15,3 +15,20 @@ body{min-height:100vh;display:flex;flex-direction:column}main{width:100%;flex:1}
 @media(max-width:720px){.masthead{align-items:center;padding:20px 6%}#menu-toggle{display:flex;background:transparent;color:var(--ink);border:0;gap:15px;padding:8px}.masthead nav{display:none;position:absolute;left:0;right:0;top:100%;max-width:none;background:var(--paper);padding:20px 6%;border-bottom:1px solid var(--line);grid-template-columns:repeat(2,1fr);gap:16px}.masthead nav.open{display:grid}.masthead nav a{font-size:14px;padding:5px 0}.theme-toolbar{flex-wrap:wrap;gap:8px 12px}.theme-toolbar span{display:none}.hero{display:block;padding-top:40px}.portrait{height:310px;margin-top:35px}.hero h1{font-size:44px;letter-spacing:-1.8px}.page-index{grid-template-columns:1fr;padding-bottom:40px}.page-index a{padding:22px}.page-index p{margin-bottom:10px}.section h1{font-size:42px;letter-spacing:-1.5px}.section-head{display:block}.section-note{margin-top:25px}.research-item{grid-template-columns:28px 1fr}.research-description{grid-column:2}.about-grid{grid-template-columns:1fr}.contact{margin-top:35px}}
 @media print{.theme-toolbar{display:none}:root[data-theme]{--paper:white;--ink:#17202b;--muted:#415064;--line:#ccd3db;--surface:#eef1f4;--accent-ink:#244b83}.masthead nav{display:none}}
 .education-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:10%;padding-top:15px}.education-layout>div+div{border-left:1px solid var(--line);padding-left:35px}@media(max-width:720px){.education-layout{grid-template-columns:1fr;gap:25px}.education-layout>div+div{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}}
+
+/* HYROX gallery: original portrait photos, with no cropping. */
+.about-hyrox{grid-template-columns:minmax(0,.85fr) minmax(0,1.65fr);gap:6%;align-items:start}
+.hyrox-gallery{min-width:0;scroll-margin-top:120px}
+.hyrox-gallery-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
+.hyrox-gallery-head h2{font-family:var(--sans);font-size:24px;letter-spacing:-.5px;margin:0}
+.hyrox-gallery-head p,.hyrox-gallery-note{font-size:11px;color:var(--muted);margin:0}
+.hyrox-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.hyrox-photo{margin:0;min-width:0;border:1px solid var(--line);background:var(--surface)}
+.hyrox-photo a{display:block}
+.hyrox-photo a:focus-visible{outline-color:var(--accent-ink)}
+.hyrox-photo img{display:block;width:100%;height:auto}
+.hyrox-photo figcaption{padding:13px 15px;font-size:10px;letter-spacing:1px}
+.hyrox-photo figcaption span:last-child{color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.hyrox-gallery-note{margin-top:12px}
+@media(max-width:900px){.about-hyrox{grid-template-columns:1fr;gap:35px}.about-hyrox #hobbies{max-width:650px}}
+@media(max-width:500px){.hyrox-photos{grid-template-columns:1fr;gap:24px}.hyrox-gallery-head{align-items:flex-end}.hyrox-gallery-head p{max-width:110px;text-align:right}}
