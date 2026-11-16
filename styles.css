@@ -32,3 +32,34 @@ body{min-height:100vh;display:flex;flex-direction:column}main{width:100%;flex:1}
 .hyrox-gallery-note{margin-top:12px}
 @media(max-width:900px){.about-hyrox{grid-template-columns:1fr;gap:35px}.about-hyrox #hobbies{max-width:650px}}
 @media(max-width:500px){.hyrox-photos{grid-template-columns:1fr;gap:24px}.hyrox-gallery-head{align-items:flex-end}.hyrox-gallery-head p{max-width:110px;text-align:right}}
+
+/* CV timeline: dates stay on the left; native details support pointer and keyboard. */
+.experience-group+.experience-group{margin-top:42px}
+.section .experience-group-title{font-family:var(--sans);font-size:12px;font-weight:600;line-height:1.4;letter-spacing:1.6px;text-transform:uppercase;margin:0 0 25px;color:var(--muted)}
+.experience-timeline{--date-width:175px;--timeline-gap:44px;list-style:none;margin:0;padding:0;position:relative}
+.experience-timeline:before{content:'';position:absolute;left:calc(var(--date-width) + var(--timeline-gap)/2);top:26px;bottom:38px;width:1px;background:var(--line)}
+.experience-entry{position:relative;display:grid;grid-template-columns:var(--date-width) minmax(0,1fr);gap:var(--timeline-gap);padding:0 0 22px}
+.experience-entry:last-child{padding-bottom:0}
+.experience-entry:before{content:'';position:absolute;left:calc(var(--date-width) + var(--timeline-gap)/2 - 5px);top:25px;width:11px;height:11px;border:2px solid var(--paper);border-radius:50%;background:var(--accent-ink);box-shadow:0 0 0 1px var(--line)}
+.experience-date{padding-top:14px;text-align:right;min-width:0}
+.experience-years{display:inline-block;padding:5px 9px;background:var(--soft);color:var(--accent-ink);font:500 15px/1.5 ui-monospace,monospace;letter-spacing:-.5px}
+.experience-period{display:block;margin-top:9px;font-size:11px;line-height:1.6;color:var(--muted)}
+.experience-details{margin:0;min-width:0;border:1px solid var(--line);background:var(--paper)}
+.experience-summary{display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none;padding:22px 25px;cursor:pointer;color:var(--ink)}
+.experience-summary::-webkit-details-marker{display:none}
+.experience-summary::marker{content:''}
+.experience-summary:hover,.experience-details[open]>.experience-summary{background:var(--surface)}
+.experience-summary:focus-visible{outline:3px solid var(--accent-ink);outline-offset:4px}
+.experience-summary-text{min-width:0}
+.experience-title{display:block;font-size:20px;font-weight:500;line-height:1.35;letter-spacing:-.45px}
+.experience-company{display:block;margin-top:7px;font-size:12px;line-height:1.6;color:var(--muted)}
+.experience-toggle{position:relative;flex:0 0 22px;width:22px;height:22px;color:var(--accent-ink)}
+.experience-toggle:before,.experience-toggle:after{content:'';position:absolute;top:10px;left:4px;width:14px;height:2px;background:currentColor}
+.experience-toggle:after{transform:rotate(90deg)}
+.experience-details[open]>.experience-summary .experience-toggle:after{display:none}
+.experience-work{padding:19px 25px 23px;border-top:1px solid var(--line);font-size:14px;line-height:1.75;color:var(--muted)}
+.experience-work ul{margin:0;padding-left:18px}
+.experience-work li+li{margin-top:9px}
+.experience-work li::marker{color:var(--accent-ink)}
+@media(max-width:720px){.experience-timeline{--date-width:116px;--timeline-gap:30px}.experience-summary{padding:18px;gap:12px}.experience-title{font-size:18px}.experience-work{padding:17px 18px 20px}.experience-years{font-size:13px}.experience-period{font-size:10px}}
+@media(max-width:500px){.experience-timeline{--date-width:78px;--timeline-gap:22px}.experience-date{padding-top:14px}.experience-years{font-size:11px;letter-spacing:-.4px;padding:5px 4px}.experience-period{font-size:9px;line-height:1.65}.experience-summary{padding:16px 12px;gap:8px;align-items:flex-start}.experience-title{font-size:16px;letter-spacing:-.3px}.experience-company{font-size:11px}.experience-toggle{flex-basis:18px;width:18px;height:20px}.experience-toggle:before,.experience-toggle:after{left:2px}.experience-work{padding:14px 12px 17px;font-size:13px}.experience-work ul{padding-left:16px}.experience-group+.experience-group{margin-top:34px}}

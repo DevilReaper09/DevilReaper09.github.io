@@ -14,7 +14,34 @@
   html('areas', data.areas.map(a => `<span>${escape(a)}</span>`).join(''));
   html('research-list', data.research.map((r, i) => `<article class="research-item"><div class="item-number">0${i+1}</div><div><h3>${escape(r.title)}</h3><span class="tag">${escape(r.status)}</span></div><div class="research-description"><p>${escape(r.description)}</p><p class="detail">${escape(r.detail)}</p>${r.mediaLabel ? media(r) : ''}</div></article>`).join(''));
   html('project-list', data.projects.map(p => `<article class="project">${p.mediaLabel ? media(p) : ''}<span class="tag">${escape(p.label)}</span><h3>${escape(p.title)}</h3><p>${escape(p.description)}</p>${p.detail ? `<details><summary>Context & contribution</summary><p>${escape(p.detail)}</p></details>` : ''}<p class="tech">${escape(p.tech)}</p></article>`).join(''));
-  html('experience-list', data.experience.map(e => `<article class="timeline-row"><div class="when">${escape(e.date)}</div><div class="role"><h3>${escape(e.role)}</h3><p>${escape(e.org)}</p></div><p>${escape(e.description)}</p></article>`).join(''));
+  const experienceGroups = [
+    { key: 'industry', title: 'Industry experience' },
+    { key: 'campus', title: 'Teaching & leadership' }
+  ];
+  html('experience-list', experienceGroups.map(group => `
+    <section class="experience-group" aria-labelledby="experience-${group.key}">
+      <h2 class="experience-group-title" id="experience-${group.key}">${escape(group.title)}</h2>
+      <ol class="experience-timeline">
+        ${data.experience.filter(item => item.category === group.key).map(item => `
+          <li class="experience-entry">
+            <div class="experience-date">
+              <span class="experience-years">${escape(item.years)}</span>
+              <span class="experience-period">${escape(item.date)}</span>
+            </div>
+            <details class="experience-details"${item.current ? ' open' : ''}>
+              <summary class="experience-summary">
+                <span class="experience-summary-text">
+                  <span class="experience-title">${escape(item.role)}</span>
+                  <span class="experience-company">${escape(item.org)}</span>
+                </span>
+                <span class="experience-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="experience-work"><ul>${item.bullets.map(bullet => `<li>${escape(bullet)}</li>`).join('')}</ul></div>
+            </details>
+          </li>`).join('')}
+      </ol>
+    </section>`).join(''));
+
   const e = data.education;
   html('education', `<p class="education-title">${escape(e.institution)}</p><p>${escape(e.degree)}<br>${escape(e.date)}</p><p>${escape(e.distinction)}<br>${escape(e.honors)}</p>`);
   html('contact-links', data.links.map(l => `<a href="${escape(l.url)}" target="_blank" rel="noopener noreferrer">${escape(l.label)}</a>`).join(''));
