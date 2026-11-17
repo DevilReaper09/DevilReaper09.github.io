@@ -6,7 +6,7 @@ window.PORTFOLIO = {
   researchNote: "My research asks what an agent should remember, how that memory should be represented, and how to test whether it genuinely improves behavior.",
   portrait: "",
   research: [
-    { title: "Individual versus averaged visual transitions", status: "Manuscript in preparation", description: "A controlled simulated current-location study comparing individual predicted transitions with adjacent-pair means, using prescribed probability propagation and matched final decoders.", detail: "Both treatments retain 47 bytes under a 64-byte numeric-state allowance. This excludes upstream encoding, immutable weights and temporary workspace; it is not total system RAM or real-robot performance." },
+    { title: "Update rules under limited memory", status: "Ongoing ablation · Not published", description: "An exploratory comparison of existing state-update, history-retention and compression rules in a simulated three-slot tracking task, across retained-state budgets and event counts.", detail: "Shared supervised visual estimates and a fixed terminal decoder isolate update-rule choices. Visual data are reused; symbolic stress tests are separate. Retained bytes exclude model weights and workspace, and results are not real-robot performance or external peer review." },
     { title: "What object experiences are worth keeping?", status: "Exploratory study", description: "An investigation of object experience under limited memory using EPIC-KITCHENS and HD-EPIC. I examine visibility, reuse, and person-specific experience, including negative results that help identify where a proposed memory representation does not yet add value.", detail: "Focus: evidence-led evaluation, not memory for its own sake." }
   ],
   projects: [
